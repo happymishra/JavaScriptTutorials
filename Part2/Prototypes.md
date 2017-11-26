@@ -74,8 +74,7 @@ console.log(Human.prototype)
 
 ### Creating an object using the constructor function
 
->When an object is created in JavaScript, JavaScript engine adds a \_\_proto\_\_  property to the newly created object
->which is called as *dunder proto*. **dunder proto or \_\_proto\_\_** points to the prototype object of the constructor function.
+>When an object **(instance)** is created in JavaScript, JavaScript engine adds a \_\_proto\_\_  property to the newly created object which is called as *dunder proto*. **dunder proto or \_\_proto\_\_** points to the prototype object of the constructor function.
 
 ![](https://github.com/rupeshmi/CodeSprint/blob/dev/JavaScript/Part2/CodeSnippets/HumanObjectProto.png)
 
