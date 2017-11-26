@@ -2,7 +2,7 @@
 
 ### Problems with the constructor function
 
->In the previou [post](https://github.com/rupeshmi/CodeSprint/edit/dev/JavaScript/Part1/Object.md) 
+>In the previous [post](https://github.com/rupeshmi/CodeSprint/edit/dev/JavaScript/Part1/Object.md) 
 >,we discuss about various ways of creating objects in JavaScript.
 >One of the ways to create objects in JavaScript is using the **Constructor** function.
 >Consider the construction function below:
@@ -57,7 +57,7 @@ function Human(firstName, lastName){
 console.log(Human);
 ```
 #### Console output
-![](https://github.com/rupeshmi/CodeSprint/blob/dev/JavaScript/Part2/CodeSnippets/ObjectUsingConstructorFn.png)
+![](https://raw.githubusercontent.com/niceKamrul/Object-Oriented-JavaScript-Tutorials/master/Part2/CodeSnippets/console%20log%20Human.JPG)
 
 >To access prototype property of the *Human* constructor use the below syntax:
 
