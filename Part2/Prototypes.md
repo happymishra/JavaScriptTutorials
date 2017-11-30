@@ -176,7 +176,7 @@ console.log(person1);
 > When we try to access a property of an object, the seach for the property begins directly on the object itself. If a property with a given names is found on the instance, then that value is returned; if the property is not found, then the search continues up the pointer to the prototype of the object, and the prototype is searched for a property with the same name. If the property is found on the prototype, then that value is returned. 
 
 >So, when person1.name is called, JavaScript engine checks if the property exist on the person1 object. In this case, name property was not on the person1 object. So, now JavaScript engine checks if the name property exists on the 
-dunder proto property of the person1 object or the prototype of the Person object. In this case, name property was there on the prototype of Person object. Hence, the output was returned "Ashwin". If the dunder proto property of the person's object does not have the name property then dunder proto property of the dunder proto prperty of the person's object was searched and this process will continue till the dunder proto property is null. In this cases output will be *undefined*.
+dunder proto property of the person1 object or the prototype of the Person constructor function. In this case, name property was there on the prototype of Person constructor function. Hence, the output was returned "Ashwin". If the dunder proto property of the person1 does not have the name property then dunder proto property of the dunder proto prperty of the person1 object was searched and this process will continue till the dunder proto property is null. In this cases output will be *undefined*.
 
 >Let's create an another object person2 using the Person constructor function
 ```javascript
@@ -185,25 +185,20 @@ var person2 = new Person();
 console.log(person2.name)// Output: Ashwin
 ```
 
-Now, let's define a property *name* on the person1 oject
+Now, let's define a property *name* on the person1 object
 
 ```javascript
 person1.name = "Anil"
 console.log(person1.name)//Output: Anil
 console.log(person2.name)//Output: Ashwin
 ```
->This happended because, when we define a property on the object itself, JavaScript engine takes the *name*
->property from the object itself and not from the objects prototype property i.e. person1 object's *name* property shadows the 
->*name* property of the prototype object.
+>This happended because, when we define a property on the object itself, JavaScript engine takes the *name* property from the object itself and not from the objects prototype property i.e. person1 object's *name* property shadows the *name* property of the prototype object.
 
 >person2 does not have *name* property hence, it looks up to the prototype to get the name property. 
 
 #### Problems with the prototype
 
->Prototype object of the constructor function is shared among all the objects created using the constructor function.
->All properties on the prototype are shared among all the objects created using the constructor function, which is ideal for functions. >Properties that contain primitive values also tend to work well, as shown in the previous example, where it’s
->possible to hide the prototype property by assigning a property of the same name to the object as show in the above example.
->The real problem occurs when a prototype object contains a property of reference type. Consider the following example:
+>Prototype object of the constructor function is shared among all the objects created using the constructor function. All properties on the prototype are shared among all the objects created using the constructor function, which is ideal for functions. Properties that contain primitive values also tend to work well, as shown in the previous example, where it’s possible to hide the prototype property by assigning a property of the same name to the object as shown in the above example. The real problem occurs when a prototype object contains a property of reference type. Consider the following example:
 
 > Modifying the primitive type properties works well as shown below
 
