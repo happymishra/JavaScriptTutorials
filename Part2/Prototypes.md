@@ -214,7 +214,10 @@ console.log(person2.name);//Output: Ashwin
 
 >Here (line 1 and 2), both person1 and person2 does not have name property, hence they access the prototypes name property and hence the output is same for both.
 
-When person1 want to have different value for the name property, __it creates a name property on its object__.
+>When person1 want to have different value for the name property, __it creates a name property on its object__.
+
+![](https://raw.githubusercontent.com/niceKamrul/Object-Oriented-JavaScript-Tutorials/master/Part2/CodeSnippets/premitive.JPG)
+
 
 #### Consider another example to display the issue with proptotypes when the prototype object contains a property of reference type
 
