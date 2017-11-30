@@ -176,7 +176,7 @@ console.log(person1);
 > When we try to access a property of an object, the seach for the property begins directly on the object itself. If a property with a given names is found on the instance, then that value is returned; if the property is not found, then the search continues up the pointer to the prototype of the object, and the prototype is searched for a property with the same name. If the property is found on the prototype, then that value is returned. 
 
 >So, when person1.name is called, JavaScript engine checks if the property exist on the person1 object. In this case, name property was not on the person1 object. So, now JavaScript engine checks if the name property exists on the 
-dunder proto property of the person1 object or the prototype of the person object. In this case, name property was there on the prototype of person object. Hence, the output was returned "Ashwin". If the dunder proto property of the person's object does not have the name property then dunder proto property of the dunder proto prperty of the person's object was searched and this process will continue till the dunder proto property is null. In this cases output will be *undefined*.
+dunder proto property of the person1 object or the prototype of the Person object. In this case, name property was there on the prototype of Person object. Hence, the output was returned "Ashwin". If the dunder proto property of the person's object does not have the name property then dunder proto property of the dunder proto prperty of the person's object was searched and this process will continue till the dunder proto property is null. In this cases output will be *undefined*.
 
 >Let's create an another object person2 using the Person constructor function
 ```javascript
