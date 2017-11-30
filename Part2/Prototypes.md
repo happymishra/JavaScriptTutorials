@@ -198,15 +198,23 @@ console.log(person2.name)//Output: Ashwin
 
 #### Problems with the prototype
 
->Prototype object of the constructor function is shared among all the objects created using the constructor function. All properties on the prototype are shared among all the objects created using the constructor function, which is ideal for functions. Properties that contain primitive values also tend to work well, as shown in the previous example, where it’s possible to hide the prototype property by assigning a property of the same name to the object as shown in the above example. The real problem occurs when a prototype object contains a property of reference type. Consider the following example:
+>As prototype object is shared among all the objects created using the constructor function, it’s properties and methods are also shared among all the objects. 
 
-> Modifying the primitive type properties works well as shown below
+>If an object A modifies property of the prototype having **_primitive value_**, other objects will not be effected by this as A will create a property on its objects as shown below.
 
 ```javascript
+console.log(person1.name);//Output: Ashwin
+console.log(person2.name);//Output: Ashwin
+
 person1.name = "Ganguly"
+
 console.log(perosn1.name);//Output: Ganguly
 console.log(person2.name);//Output: Ashwin
 ```
+
+>Here (line 1 and 2), both person1 and person2 does not have name property, hence they access the prototypes name property and hence the output is same for both.
+
+When person1 want to have different value for the name property, __it creates a name property on its object__.
 
 #### Consider another example to display the issue with proptotypes when the prototype object contains a property of reference type
 
@@ -233,11 +241,11 @@ console.log(person1.friends);// Output: "Jadeja, Vijay, Amit"
 console.log(person2.friends);// Output: "Jadeja, Vijay, Amit"
 ```
 
->Here, the Person.prototype object has a property called friends that contains an array of strings.
->Two objects of Person, person1 and person2 are created. *person1* modifies *friends* property and adds an another string in the array.
->string. Because the friends array exists on Person.prototype, not on person1, the changes made in the friends property by person1 objects are also reflected on person2.friends (which points to the same array). If the intention is to have
->an array shared by all instances, then this outcome is okay. Typically, though, instances want to
->have their own copies of all properties.
+>In the above example, person1 and person2 points to the same friends array of the prototype object. person1 modifies friends property by adding another string in the array.
+
+>Because the friends array exists on Person.prototype, not on person1, the changes made in the friends property by person1 objects are also reflected on person2.friends (which points to the same array).
+
+>If the intention is to have an array shared by all instances, then this outcome is okay. But here this was not the case.
 
 #### Combine Constructor/Prototype
 
@@ -245,7 +253,7 @@ console.log(person2.friends);// Output: "Jadeja, Vijay, Amit"
 1. Problem with constructor: Every object has its own instance of the function
 2. Problem with the prototype: Modifying a property using one object reflects the other object also
 
->To solve above both problmens, we can define all the object specific properties inside the constructor and all shared properties and methods insdie the prototype as shown below:
+>To solve above both problmens, we can define all the object specific properties inside the constructor and all shared properties and methods insdide the prototype as shown below:
 
 ```javascript
 //Define the object specific properties inside the constructor
