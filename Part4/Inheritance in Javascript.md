@@ -99,8 +99,8 @@ property on the SubType.prototype was overwritten.
 ```javascript
 //SuperType constructor function
 function SuperType(firstName, lastName){
-	this.firstName = "Virat",
-	this.lastName = "Kohli",
+	this.firstName = firstName,
+	this.lastName = lastName,
 	this.friends = ["Ashwin", "Jadeja"]
 }
 
@@ -185,7 +185,7 @@ SubType.prototype.getSubAge = function(){
 >from the SuperType constructor function
 
 >Let's understand the whole process by creating an object using SubType constructor function
-```javascript
+​```javascript
 var subTypeObj1= new SubType("Virat", "Kohli", 26);
 ```
 
