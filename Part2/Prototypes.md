@@ -265,9 +265,9 @@ console.log(person2.friends);// Output: "Jadeja, Vijay, Amit"
 
 ```javascript
 //Define the object specific properties inside the constructor
-function Human(name, age){
-	this.name = name,
-	this.age = age,
+function Human(firstname, lastname){
+	this.firstname = firstname,
+	this.lastname = lastname,
 	this.friends = ["Jadeja", "Vijay"]
 }
 //Define the shared properties and methods using the prototype
